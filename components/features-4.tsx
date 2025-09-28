@@ -5,7 +5,7 @@ export default function Features() {
         <section id='solutions' className="mt-[5vh] sm:mt-[10vh] md:mt-[30vh] lg:mt-[100vh] py-8 sm:py-12 md:py-16 lg:py-20">
             <div className="mx-auto max-w-5xl space-y-4 sm:space-y-6 md:space-y-8 lg:space-y-10 px-4 sm:px-6">
                 <div className="flex justify-center">
-                    <img className="w-32 sm:w-40 md:w-48 lg:w-56" src="/logo1.png" alt="RafaConsultoria" />
+                    <img className="w-32 sm:w-40 md:w-48 lg:w-56" src="app/public/logo1.png" alt="RafaConsultoria" />
                 </div>
                 <div className="relative z-10 mx-auto max-w-xl space-y-4 sm:space-y-5 text-center">
                     <h2 className="text-balance text-3xl sm:text-4xl font-medium lg:text-5xl">Soluções tecnológicas para o seu negócio</h2>
