@@ -25,8 +25,8 @@ export const metadata: Metadata = {
     siteName: "Rafa Consultoria",
     images: {
       url: '/img/Logo3.png',
-      width: 1200,
-      height: 630,
+      width: 600,
+      height: 315,
       alt: 'Rafa Consultoria Logo',
     },
     locale: "pt_BR",
