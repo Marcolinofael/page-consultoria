@@ -83,9 +83,6 @@ export default function HeroSection() {
 
                         <div className="mx-auto max-w-7xl px-6">
                             <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
-                                <AnimatedGroup variants={transitionVariants}>
-                                
-                                </AnimatedGroup>
 
                                 <TextEffect
                                     preset="fade-in-blur"
