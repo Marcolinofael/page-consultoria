@@ -22,7 +22,6 @@ export type AnimatedGroupProps = {
     item?: Variants;
   };
   preset?: PresetType;
-  as?: React.ElementType;
   as?: ElementType;
   asChild?: ElementType;
 };
