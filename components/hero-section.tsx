@@ -83,7 +83,6 @@ export default function HeroSection() {
 
                         <div className="mx-auto max-w-7xl px-6">
                             <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
-
                                 <TextEffect
                                     preset="fade-in-blur"
                                     speedSegment={0.3}
@@ -115,6 +114,9 @@ export default function HeroSection() {
                                 },
                                 ...transitionVariants,
                             }}>
+                            {/* Add children here if needed */}
+                            {/* Empty fragment to satisfy required children prop */}
+                            <></>
                         </AnimatedGroup>
                     </div>
                 </section>
