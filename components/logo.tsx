@@ -1,9 +1,10 @@
 import { cn } from '@/lib/utils'
+import React from 'react'
 
-export const Logo = ({ className, uniColor }: { className?: string; uniColor?: boolean }) => {
+export const Logo = ({ className }: { className?: string; uniColor?: boolean }) => {
     return (
         <img
-            src="app/public/logo.png"
+            src="/img/Logo.png"
             alt="Logo"
             className={cn('h-12 w-auto', className)}
         />
