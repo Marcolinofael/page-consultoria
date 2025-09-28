@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Rafa Consultoria",
   description: "Consultoria especializada em soluções digitais e Personalizados",
-  keywords: ["consultoria", "tecnologia", "soluções digitais", "desenvolvimento web", "inovação"],
+  keywords: ["consultoria Sublimação", "tecnologia", "soluções digitais", "desenvolvimento web", "inovação", "personalizados", "Rafa Consultoria", "Rafa", "Marcolino", "Rafael Marcolino"],
   authors: [{ name: "Rafael Marcolino" }],
   metadataBase: new URL('https://rafaconsultoria.site'),
   openGraph: {
@@ -24,9 +24,9 @@ export const metadata: Metadata = {
     url: 'https://rafaconsultoria.site',
     siteName: "Rafa Consultoria",
     images: {
-      url: '/img/Logo.png',
-      width: 800,
-      height: 600,
+      url: '/img/Logo3.png',
+      width: 1200,
+      height: 630,
       alt: 'Rafa Consultoria Logo',
     },
     locale: "pt_BR",
@@ -39,12 +39,12 @@ export const metadata: Metadata = {
     images: ['/img/Logo.png'],
   },
   icons: {
-    icon: '/img/Logo.png',
-    shortcut: '/img/Logo.png',
-    apple: '/img/Logo.png',
+    icon: '/img/Logo3.png',
+    shortcut: '/img/Logo3.png',
+    apple: '/img/Logo3.png',
     other: {
       rel: 'apple-touch-icon',
-      url: '/img/Logo.png',
+      url: '/img/Logo3.png',
     },
   },
   robots: {
