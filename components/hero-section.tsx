@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 import { TextEffect } from '@/components/ui/text-effect'
 import { HeroHeader } from './header'
 
@@ -12,6 +13,11 @@ const videos = [
     // '/img/seu-novo-video-1.mp4', // Exemplo
     // '/img/seu-novo-video-2.mp4', // Exemplo
 ]
+
+const logoAnimation = {
+  hidden: { opacity: 0, y: 20, filter: 'blur(12px)' },
+  visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
+}
 
 export default function HeroSection() {
     const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
@@ -45,18 +51,26 @@ export default function HeroSection() {
                 <section className="relative z-10 flex flex-col items-center justify-center h-full text-white">
                     <div className="container mx-auto px-6">
                         <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
-                            <Image
-                                src="/img/Logobranca.png"
-                                alt="Logo"
-                                width={400}
-                                height={400}
-                                className="mx-auto mb-8"
-                                priority
-                            />
+                            <motion.div
+                                initial="hidden"
+                                animate="visible"
+                                variants={logoAnimation}
+                                transition={{ duration: 0.8, delay: 0.1 }}
+                            >
+                                <Image
+                                    src="/img/Logobranca.png"
+                                    alt="Logo"
+                                    width={400}
+                                    height={400}
+                                    className="mx-auto mb-8"
+                                    priority
+                                />
+                            </motion.div>
                             <TextEffect
                                 preset="fade-in-blur"
                                 speedSegment={0.3}
                                 as="h1"
+                                delay={0.5} // Atraso para começar depois da logo
                                 className="mx-auto mt-8 max-w-4xl text-balance text-5xl max-md:font-semibold md:text-7xl lg:mt-16 xl:text-[5.25rem]">
                                 Temos a Solução para os seus problemas
                             </TextEffect>
@@ -64,7 +78,7 @@ export default function HeroSection() {
                                 per="line"
                                 preset="fade-in-blur"
                                 speedSegment={0.3}
-                                delay={0.5}
+                                delay={0.8} // Atraso maior para o parágrafo
                                 as="p"
                                 className="mx-auto mt-8 max-w-2xl text-balance text-lg font-medium">
                                 Com a nossa Consultoria especializada, seu negócio alcançará novos patamares de sucesso e eficiência.
