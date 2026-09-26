@@ -1,116 +1,105 @@
-import type { Metadata } from "next";
-import { Libre_Bodoni } from "next/font/google";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { SITE_URL } from "@/lib/site";
 
-const libreBodoni = Libre_Bodoni({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
+// Ícones, imagem de compartilhamento e manifest ficam na pasta /app e o Next.js
+// gera as tags automaticamente:
+//   favicon.ico, icon.png, apple-icon.png -> ícones da aba e da tela inicial
+//   opengraph-image.tsx, twitter-image.tsx -> imagem ao compartilhar o link (1200x630)
+//   manifest.ts -> "Adicionar à tela inicial" no celular
+
+const TITLE = "Rafa Consultoria | Desenvolvimento de Sites e Suporte de TI";
+const DESCRIPTION =
+  "Desenvolvimento de sites profissionais e suporte técnico em TI para você e sua empresa. Uma única parceira cuidando de toda a sua estrutura digital.";
+const SHARE_TITLE = "Rafa Consultoria | Tecnologia completa para o seu negócio";
+const SHARE_DESCRIPTION =
+  "Do site profissional ao suporte de TI no dia a dia: uma única parceira cuidando de toda a sua estrutura digital.";
 
 export const metadata: Metadata = {
-  // --- INFORMAÇÕES GERAIS E SEO ---
+  // Transforma URLs relativas (imagens, canonical) em absolutas.
+  metadataBase: new URL(SITE_URL),
 
-  // O 'metadataBase' é uma ótima prática para garantir que todas as URLs relativas (como as de imagens)
-  // se tornem absolutas. Mantenha isso.
-  metadataBase: new URL('https://rafaconsultoria.site'),
-
-  // TÍTULO: Mais descritivo, incluindo palavras-chave principais.
-  // "O que você faz | Nome da Marca" é um formato eficaz.
-  title: "Rafa Consultoria | Soluções Digitais e Produtos Personalizados",
-  
-  // DESCRIÇÃO: Mais elaborada, com uma chamada para ação e usando palavras-chave de forma natural.
-  // Idealmente, deve ter entre 150-160 caracteres.
-  description: "Transforme sua presença online com a Rafa Consultoria. Oferecemos soluções digitais inovadoras, consultoria em sublimação e desenvolvimento web para impulsionar o seu negócio.",
-
-  // KEYWORDS: Embora o Google dê menos importância a esta tag hoje em dia,
-  // ela pode ser útil para outros mecanismos de busca. A lista está mais focada.
-  keywords: [
-    "consultoria em tecnologia", 
-    "soluções digitais", 
-    "desenvolvimento de sites", 
-    "consultoria para sublimação", 
-    "produtos personalizados", 
-    "marketing digital",
-    "Rafa Consultoria", 
-    "Rafael Marcolino"
-  ],
-
-  // AUTOR: Mantido como estava, mas adicionei a URL para fortalecer a referência.
-  authors: [{ name: "Rafael Marcolino", url: "https://rafaconsultoria.site" }],
-  
-  // CANONICAL URL: Ajuda a evitar conteúdo duplicado, apontando para a versão "preferida" da página.
-  alternates: {
-    canonical: '/',
+  // "O que você faz | Marca". O template vale para páginas futuras (ex.: "Blog | Rafa Consultoria").
+  title: {
+    default: TITLE,
+    template: "%s | Rafa Consultoria",
   },
-  
-  // ROBOTS: Adicionei mais detalhes para o GoogleBot, seguindo as melhores práticas.
+  description: DESCRIPTION,
+  applicationName: "Rafa Consultoria",
+  category: "technology",
+
+  // O Google ignora keywords, mas outros buscadores ainda leem.
+  keywords: [
+    "desenvolvimento de sites",
+    "criação de sites",
+    "site profissional",
+    "suporte técnico em TI",
+    "suporte de TI",
+    "consultoria em TI",
+    "Rafa Consultoria",
+    "Rafael Marcolino",
+  ],
+  authors: [{ name: "Rafael Marcolino", url: SITE_URL }],
+  creator: "Rafael Marcolino",
+  publisher: "Rafa Consultoria",
+
+  // Aponta a versão "oficial" da página e evita conteúdo duplicado.
+  alternates: {
+    canonical: "/",
+  },
+
   robots: {
     index: true,
     follow: true,
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
-  
-  // --- REDES SOCIAIS (OPEN GRAPH E TWITTER) ---
 
+  // Compartilhamento em redes sociais e WhatsApp (a imagem vem de opengraph-image.tsx).
   openGraph: {
-    // TÍTULO PARA REDES SOCIAIS: Pode ser um pouco mais "chamativo" que o título de SEO.
-    title: "Rafa Consultoria: Inovação Digital e Personalizados",
-    description: "Especialistas em desenvolvimento web, sublimação e soluções que transformam ideias em realidade.",
-    url: 'https://rafaconsultoria.site',
+    title: SHARE_TITLE,
+    description: SHARE_DESCRIPTION,
+    url: SITE_URL,
     siteName: "Rafa Consultoria",
-    // IMAGENS: Use uma URL absoluta e a resolução recomendada de 1200x630px para melhor exibição.
-    // O Next.js com `metadataBase` cuidará de tornar a URL absoluta.
-    images: [
-      {
-        url: '/img/Logo1.png', // SUGESTÃO: Crie uma imagem específica para redes sociais (1200x630).
-        width: 1200,
-        height: 630,
-        alt: 'Rafa Consultoria - Soluções Digitais e Personalizados',
-      },
-    ],
     locale: "pt_BR",
     type: "website",
   },
-
   twitter: {
-    card: 'summary_large_image',
-    title: "Rafa Consultoria: Inovação Digital e Personalizados", // Consistente com o Open Graph
-    description: "Especialistas em desenvolvimento web, sublimação e soluções que transformam ideias em realidade.",
-    // IMAGEM PARA O TWITTER: Deve ser a mesma do Open Graph para consistência.
-    images: ['/img/Logo1.png'], // Use a mesma imagem de 1200x630
-    // creator: '@seuUsuarioTwitter', // SUGESTÃO: Adicione seu @ do Twitter, se tiver.
+    card: "summary_large_image",
+    title: SHARE_TITLE,
+    description: SHARE_DESCRIPTION,
   },
 
-  // --- ÍCONES E APARÊNCIA ---
-  
-  // ÍCONES: Estrutura simplificada e mais completa, usando os nomes de arquivo padrão.
-  icons: {
-    icon: '/favicon.ico', // Formato padrão
-    shortcut: '/favicon-16x16.png',
-    apple: '/apple-touch-icon.png', // Ícone para dispositivos Apple
-  },
-  
-  // MANIFEST: Importante para PWA (Progressive Web App).
-  // Crie um arquivo `manifest.json` na sua pasta /public.
-  manifest: '/manifest.json',
-  
-  // THEME COLOR: Define a cor da barra de ferramentas do navegador em dispositivos móveis.
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#000000' },
-  ],
-  
-  // VERIFICAÇÃO DE SITES: Descomente e adicione os códigos de verificação do Google, Bing, etc.
+  // Verificação do Google Search Console: descomente e cole o código quando cadastrar o site.
   // verification: {
-  //   google: 'seu-codigo-de-verificacao-google',
+  //   google: "seu-codigo-de-verificacao-google",
   // },
+};
+
+// Cor da barra do navegador no celular (o site é sempre escuro).
+export const viewport: Viewport = {
+  themeColor: "#0a0a0a",
+  colorScheme: "dark",
+};
+
+// Dados estruturados: ajudam o Google a entender que o site é de um negócio de serviços.
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Rafa Consultoria",
+  url: SITE_URL,
+  logo: `${SITE_URL}/icon.png`,
+  image: `${SITE_URL}/opengraph-image`,
+  description: DESCRIPTION,
+  telephone: "+55 24 99299-8042",
+  founder: { "@type": "Person", name: "Rafael Marcolino" },
+  areaServed: { "@type": "Country", name: "Brasil" },
+  knowsAbout: ["Desenvolvimento de sites", "Suporte técnico em TI"],
 };
 
 export default function RootLayout({
@@ -120,9 +109,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className="dark" suppressHydrationWarning>
-      <body
-        className={`${libreBodoni.variable} antialiased`}
-      >
+      <body className="antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
       </body>
     </html>
