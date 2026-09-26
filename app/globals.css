@@ -124,3 +124,25 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Pulsos de luz do CircuitBackground: percorrem a trilha e fazem uma pausa antes de repetir */
+@keyframes circuit-pulse {
+  0% {
+    stroke-dashoffset: var(--d);
+  }
+  65%,
+  100% {
+    stroke-dashoffset: calc(var(--l) * -1);
+  }
+}
+
+.circuit-pulse {
+  animation: circuit-pulse linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .circuit-pulse {
+    animation: none;
+    opacity: 0;
+  }
+}

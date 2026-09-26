@@ -117,6 +117,10 @@ const AnimationComponent: React.FC<{
   per: 'line' | 'word' | 'char';
   segmentWrapperClassName?: string;
 }> = React.memo(({ segment, variants, per, segmentWrapperClassName }) => {
+  // Espaços entre palavras ficam como texto comum para o navegador descartá-los
+  // na quebra de linha (como inline-block, viravam um recuo no início da linha).
+  if (per === 'word' && segment.trim() === '') return <>{' '}</>;
+
   const content =
     per === 'line' ? (
       <motion.span variants={variants} className='block'>

@@ -17,7 +17,7 @@ export const Footer = () => {
                     <div className="space-y-4">
                         <Logo />
                         <p className="max-w-xs text-sm">
-                            Soluções inovadoras para impulsionar o seu negócio.
+                            Consultoria especializada em soluções de tecnologia e inovação para empresas que buscam crescimento e eficiência.
                         </p>
                         <div className="flex space-x-4">
                             <a href="#" aria-label="Twitter" className="hover:text-white transition-colors"><Twitter /></a>
@@ -42,8 +42,8 @@ export const Footer = () => {
                     <div>
                         <h3 className="font-semibold text-white mb-4">Contato</h3>
                         <ul className="space-y-2">
-                            <li><a href="tel:+5524992998042" className="hover:text-white transition-colors">(24) 99299-8042</a></li>
-                            <li><a href="mailto:contato@consultoria.com" className="hover:text-white transition-colors">contato@consultoria.com</a></li>
+                            <li><a href="tel:+5522992133502" className="hover:text-white transition-colors">(22) 99213-3502</a></li>
+                            <li><a href="mailto:rmarcolino@rafaelmarcolino.online" className="hover:text-white transition-colors">rmarcolino@rafaelmarcolino.online</a></li>
                         </ul>
                     </div>
                 </div>
