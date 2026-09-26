@@ -75,7 +75,7 @@ export const HeroHeader = () => {
                                     asChild
                                     size="sm"
                                     className="inline-flex">
-                                    <Link href="https://wa.me/5524992998042?text=Olá%20Queria%20Saber%20Mais%20Sobre%20A%20Consultoria"
+                                    <Link href="https://wa.me/5522992133502?text=Olá%20Queria%20Saber%20Mais%20Sobre%20A%20Consultoria"
                                             target="_blank"
                                             rel="noopener noreferrer">
                                         <span>Entre em contato</span>
