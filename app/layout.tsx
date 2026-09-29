@@ -5,7 +5,7 @@ import { SITE_URL } from "@/lib/site";
 // Ícones, imagem de compartilhamento e manifest ficam na pasta /app e o Next.js
 // gera as tags automaticamente:
 //   favicon.ico, icon.png, apple-icon.png -> ícones da aba e da tela inicial
-//   opengraph-image.tsx, twitter-image.tsx -> imagem ao compartilhar o link (1200x630)
+//   opengraph-image.jpg, twitter-image.jpg -> imagem ao compartilhar o link (1200x630, JPG < 300 KB para o WhatsApp)
 //   manifest.ts -> "Adicionar à tela inicial" no celular
 
 const TITLE = "Rafa Consultoria | Desenvolvimento de Sites e Suporte de TI";
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     },
   },
 
-  // Compartilhamento em redes sociais e WhatsApp (a imagem vem de opengraph-image.tsx).
+  // Compartilhamento em redes sociais e WhatsApp (a imagem vem de opengraph-image.jpg).
   openGraph: {
     title: SHARE_TITLE,
     description: SHARE_DESCRIPTION,
@@ -94,7 +94,7 @@ const jsonLd = {
   name: "Rafa Consultoria",
   url: SITE_URL,
   logo: `${SITE_URL}/icon.png`,
-  image: `${SITE_URL}/opengraph-image`,
+  image: `${SITE_URL}/opengraph-image.jpg`,
   description: DESCRIPTION,
   telephone: "+55 24 99299-8042",
   founder: { "@type": "Person", name: "Rafael Marcolino" },
