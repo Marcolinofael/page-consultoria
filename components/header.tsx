@@ -1,10 +1,11 @@
 'use client'
 import Link from 'next/link'
 import { Logo } from '@/components/logo'
-import { Menu, X } from 'lucide-react'
+import { Menu, ScreenShare, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import React from 'react'
 import { cn } from '@/lib/utils'
+import { RAFADESK_URL } from '@/lib/site'
 
 const menuItems = [
     { name: 'Início', href: '#inicio' },
@@ -74,8 +75,21 @@ export const HeroHeader = () => {
                                 <Button
                                     asChild
                                     size="sm"
+                                    variant="outline"
                                     className="inline-flex">
-                                    <Link href="https://wa.me/5522992133502?text=Olá%20Queria%20Saber%20Mais%20Sobre%20A%20Consultoria"
+                                    <Link href={RAFADESK_URL}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            title="Baixar o RafaDesk para receber suporte remoto">
+                                        <ScreenShare />
+                                        <span>RafaDesk</span>
+                                    </Link>
+                                </Button>
+                                <Button
+                                    asChild
+                                    size="sm"
+                                    className="inline-flex">
+                                    <Link href="https://wa.me/5524992998042?text=Olá%20Queria%20Saber%20Mais%20Sobre%20A%20Consultoria"
                                             target="_blank"
                                             rel="noopener noreferrer">
                                         <span>Entre em contato</span>

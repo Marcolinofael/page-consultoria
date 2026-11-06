@@ -8,7 +8,7 @@ import { TextEffect } from '@/components/ui/text-effect'
 import { Button } from '@/components/ui/button'
 import { HeroHeader } from './header'
 
-const WHATSAPP_URL = 'https://wa.me/5522992133502?text=Olá%20Queria%20Saber%20Mais%20Sobre%20A%20Consultoria'
+const WHATSAPP_URL = 'https://wa.me/5524992998042?text=Olá%20Queria%20Saber%20Mais%20Sobre%20A%20Consultoria'
 
 const fadeInBlur = {
   hidden: { opacity: 0, y: 20, filter: 'blur(12px)' },

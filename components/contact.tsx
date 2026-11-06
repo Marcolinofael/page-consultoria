@@ -13,7 +13,7 @@ export const Contact = () => {
         const formData = new FormData(event.currentTarget);
         const name = formData.get('name') as string;
         const message = formData.get('message') as string;
-        const phoneNumber = '5522992133502'; // Seu número de WhatsApp aqui
+        const phoneNumber = '5524992998042'; // Seu número de WhatsApp aqui
 
         const whatsappMessage = `Olá, meu nome é ${name}, ${message}`;
         const encodedMessage = encodeURIComponent(whatsappMessage);
@@ -54,9 +54,9 @@ export const Contact = () => {
                             Você também pode me contatar diretamente pelo telefone ou e-mail. Estou disponível para responder suas dúvidas e discutir como posso ajudar no seu projeto.
                         </p>
                         <div className="space-y-4">
-                            <a href="tel:+5522992133502" className="flex items-center gap-4 group">
+                            <a href="tel:+5524992998042" className="flex items-center gap-4 group">
                                 <Phone className="w-6 h-6 text-primary" />
-                                <span className="text-lg text-white group-hover:text-primary transition-colors">(22) 99213-3502</span>
+                                <span className="text-lg text-white group-hover:text-primary transition-colors">(24) 99299-8042</span>
                             </a>
                             <a href="mailto:rmarcolino@rafaelmarcolino.online" className="flex items-center gap-4 group">
                                 <Mail className="w-6 h-6 text-primary" />
