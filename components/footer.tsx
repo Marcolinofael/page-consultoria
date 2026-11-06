@@ -42,7 +42,7 @@ export const Footer = () => {
                     <div>
                         <h3 className="font-semibold text-white mb-4">Contato</h3>
                         <ul className="space-y-2">
-                            <li><a href="tel:+5522992133502" className="hover:text-white transition-colors">(22) 99213-3502</a></li>
+                            <li><a href="tel:+5524992998042" className="hover:text-white transition-colors">(24) 99299-8042</a></li>
                             <li><a href="mailto:rmarcolino@rafaelmarcolino.online" className="hover:text-white transition-colors">rmarcolino@rafaelmarcolino.online</a></li>
                         </ul>
                     </div>
